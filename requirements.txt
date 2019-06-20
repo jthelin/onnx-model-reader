@@ -1,0 +1,7 @@
+setuptools
+protobuf
+numpy
+onnx
+onnxmltools
+onnxruntime
+onnxruntime-gpu
