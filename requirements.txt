@@ -1,3 +1,5 @@
 protobuf
+netron
 numpy
 onnx
+tox
