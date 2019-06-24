@@ -16,13 +16,10 @@ import onnx
 import onnx.utils
 import sys
 
-from onnx import ModelProto
-from onnx import optimizer
-
 model_file = sys.argv[1]
 
 print("-- Opening ONNX file=%s" % model_file)
-model: ModelProto = onnx.load(model_file)
+model = onnx.load_model(model_file) # type: onnx.ModelProto
 
 print("-- ONNX OpSet=%s" % model.opset_import)
 
@@ -40,7 +37,7 @@ print('-- ONNX model validated OK')
 print()
 
 # A full list of supported optimization passes can be found using get_available_passes()
-all_passes = optimizer.get_available_passes()
+all_passes = onnx.optimizer.get_available_passes()
 print("-- Available optimization passes:")
 for p in all_passes:
     print(p)
